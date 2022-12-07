@@ -12,7 +12,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # take user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("\nWhich city would you like to filter by? New York City, Chicago or Washington?\n").lower()
         if city not in ['chicago', 'new york', 'washington']:
@@ -21,7 +21,7 @@ def get_filters():
         else:
             break
 
-    # take user input for month (all, january, february, ... , june)
+    # get user input for month (all, january, february, ... , june)
     while True:
         month = input(
             "\nWhich month would you like to filter by? January, February, March, April, May, June or type 'all' if you do not have any preference?\n").lower()
@@ -69,7 +69,7 @@ def load_data(city, month, day):
 
     # filter by month if applicable
     if month != 'all':
-        # use the index of the months list to get the corresponding int
+        # by taking the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
 
@@ -90,7 +90,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # display the most common month
+    # show the most common month
     print("The most common month is: {}".format(
         str(df['month'].mode().values[0]))
     )
